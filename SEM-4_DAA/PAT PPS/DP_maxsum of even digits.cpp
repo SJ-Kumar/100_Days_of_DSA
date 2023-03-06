@@ -1,0 +1,1 @@
+dynamic programming algorithm to solve the problem of finding the maximum sum of even digits in a number
