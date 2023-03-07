@@ -1,5 +1,20 @@
 /* Find the maximum revenue that can be earned by selling a product with a given product number, n, 
-and the number of times it can be split into smaller products, k. */
+and the number of times it can be split into smaller products, k.
+
+
+Algorithm for maxRevenue function:
+
+Define a function named "calculatePrice" that takes an integer argument x and returns the sum of its digits, rounded up to the nearest even number.
+If k equals 1, return the result of calling the "calculatePrice" function on n.
+Initialize a variable named "maxRev" to 0.
+Loop over all possible values of i from 1 to n-k+1:
+a. Calculate the revenue of cutting the rope at position i as the sum of "calculatePrice(i)" and "maxRevenue(n-i, k-1)".
+b. If the revenue is greater than "maxRev", update "maxRev" to the revenue.
+Return "maxRev".
+The main function reads in the values of n and k, calls the "maxRevenue" function with these values, and prints the resulting revenue.
+
+
+*/
 
 #include <iostream>
 #include <cstring>
