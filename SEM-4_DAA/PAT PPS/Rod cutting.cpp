@@ -35,19 +35,19 @@ int calculatePrice(int x) {
 }
 
 int maxRevenue(int n, int k) {
-    if (k == 1) {
+    if (k == 1) { //If we only need to partition into one part, the revenue is simply the sum of the digits of n
         return calculatePrice(n);
     }
 
-    int maxRev = 0;
-    for (int i = 1; i <= n - k + 1; i++) {
-        int rev = calculatePrice(i) + maxRevenue(n - i, k - 1);
-        if (rev > maxRev) {
+    int maxRev = 0; //Initialize the maximum revenue to 0
+    for (int i = 1; i <= n - k + 1; i++) { //Iterate over all possible partition sizes
+        int rev = calculatePrice(i) + maxRevenue(n - i, k - 1); //Calculate the revenue for the current partition size and recurse for the remaining parts
+        if (rev > maxRev) { //If the revenue is greater than the current maximum revenue, update the maximum revenue
             maxRev = rev;
         }
     }
+    return maxRev; //Return the maximum revenue
 
-    return maxRev;
 }
 
 int main() {
