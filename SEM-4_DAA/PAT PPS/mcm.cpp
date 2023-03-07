@@ -1,5 +1,14 @@
 /* Given an array of integers representing the dimensions of a series of matrices, 
 write a program to find the minimum number of scalar multiplications required to multiply these matrices together in a given order.
+
+Algorithm 
+
+1. Initialize an n x n 2D array m where n is the number of matrices in the chain.
+2. Set the diagonal elements of m to 0 since a single matrix doesn't require any multiplication.
+3. For every chain length L from 2 to n, and for every possible starting index i up to n-L+1, find the optimal cost of multiplying the matrices starting at i and ending at i+L-1.
+4. To do this, loop through all possible split points k between i and i+L-2, and calculate the cost of multiplying the matrices from i to k, and from k+1 to i+L-1, and then adding the cost of multiplying the resulting matrices together.
+5. Keep track of the minimum cost encountered for each starting index i and chain length L, and store it in m[i][i+L-1].
+6. Return the minimum cost of multiplying the entire chain of matrices, which is stored in m[1][n-1].
 */
 
 #include <iostream>
