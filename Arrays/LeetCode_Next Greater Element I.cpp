@@ -14,7 +14,7 @@ public:
                     break;
                 }
             }
-            result.push_back(next_greater); // add the Next Greater Element to the result vector
+            result.push_back(next_greater); // add the Next Greater Element to the result vector.
         }
         return result;
     }
