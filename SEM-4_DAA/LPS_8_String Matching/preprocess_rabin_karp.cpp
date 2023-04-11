@@ -1,3 +1,27 @@
+/*
+Rabin Karp - Simple preprocessing function
+Given a Text 'T' and a Pattern 'P', implement rabin-karp algorithm with a simple pre-processing function p such that it returns numerical equivalent of digits, 10 to 35 for capital letters and 36 to 61 for small letters. Count the number of spurious hits also
+
+Note: Edit the code in the editor to simplify the preprocessing funtion
+
+Input Format
+
+First line contains the text T
+
+Next line contains the pattern, P
+
+Next line contains the total number of characters in the input alphabet
+
+Next line contains a prime number
+
+Output Format
+
+Print the number of spurious hits
+
+Print the position of occurrence of P in T
+
+*/
+
 #include <iostream>
 #include <string>
 #include <math.h>
