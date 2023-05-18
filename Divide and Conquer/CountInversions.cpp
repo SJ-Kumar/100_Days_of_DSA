@@ -1,5 +1,5 @@
 /*(QS)
-Consider an array of A[1, 2, 3, ..., n] be an array of n distinct numbers. If i < j and A[i] > A[j], then we call the the pair (i, j) as
+consider an array of A[1, 2, 3, ..., n] be an array of n distinct numbers. If i < j and A[i] > A[j], then we call the the pair (i, j) as
 an inversion of A. For example, the five inversions in the array
 A :< 2, 3, 8, 6, 1 > are (1, 5), (2, 5), (3, 4), (3, 5), (4, 5). Given an
 array of numbers, design the pseudocode and the corresponding
