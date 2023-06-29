@@ -12,6 +12,7 @@ class Main {
             for(int j=n-1;j>i;j--){
                 suffix_sum+=arr[j];
             }
+            if(prefix_sum==suffix_sum)
             res=Math.max(res,prefix_sum);
         }
         return res;
@@ -26,6 +27,7 @@ class Main {
         System.out.println(eqb(arr,n));
     }
 }
+
 
 //TC = O(n^2)
 //SC = O(1)
