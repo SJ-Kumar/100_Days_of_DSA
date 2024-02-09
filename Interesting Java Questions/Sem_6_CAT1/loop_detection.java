@@ -1,3 +1,6 @@
+//Time complexity: O(N)
+//Space complexity:O(1)
+
 import java.util.Scanner;
 
 public class Main {
