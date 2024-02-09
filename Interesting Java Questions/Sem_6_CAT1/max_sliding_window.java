@@ -1,3 +1,6 @@
+//Time complexity: O(N*K)
+//Space complexity:O(N-K+1)
+
 import java.util.*;
 
 public class Main{
