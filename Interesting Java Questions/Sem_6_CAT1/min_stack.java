@@ -1,5 +1,5 @@
-//TC-O(n)
-//SC-O(n)
+//TC-O(1)
+//SC-O(1)
 
 import java.util.*;
 
