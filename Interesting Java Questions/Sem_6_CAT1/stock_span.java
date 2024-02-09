@@ -1,3 +1,5 @@
+//TC - O(n^2)
+//SC - O(n)
 import java.util.*;
 public class Main{
     public static class StockSpan{
