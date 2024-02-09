@@ -1,3 +1,6 @@
+//TC - O(n)
+//SC - O(n)
+
 import java.util.Scanner;
 import java.util.Stack;
 
