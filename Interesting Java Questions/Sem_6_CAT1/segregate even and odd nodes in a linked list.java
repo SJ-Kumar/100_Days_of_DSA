@@ -1,82 +1,73 @@
-public class LinkedList {
-    // Node structure
-    static class Node {
-        int data;
-        Node next;
+import java.util.Scanner;
 
-        Node(int d) {
-            data = d;
-            next = null;
-        }
-    }
-
-    Node head;
-    Node evenHead;
-    Node oddHead;
-
-    // Function to insert a new node at the beginning of the linked list
-    void push(int newData) {
-        Node newNode = new Node(newData);
-        newNode.next = head;
-        head = newNode;
-    }
-
-    // Function to segregate even and odd nodes
-    void segregateEvenOdd() {
-        Node current = head;
-        while (current != null) {
-            Node nextNode = current.next;
-            if (current.data % 2 == 0) {
-                // Insert even node into even linked list
-                current.next = evenHead;
-                evenHead = current;
-            } else {
-                // Insert odd node into odd linked list
-                current.next = oddHead;
-                oddHead = current;
+public class Main {
+    public static class LinkedList {
+        static class Node {
+            int data;
+            Node next;
+            Node(int d) {
+                data = d;
+                next = null;
             }
-            current = nextNode;
+        }
+        Node head;
+        Node evenHead = null;
+        Node oddHead = null;
+
+        void push(int newData) {
+            Node newNode = new Node(newData);
+            newNode.next = head;
+            head = newNode;
         }
 
-        // Merge even and odd lists
-        if (evenHead != null) {
-            head = evenHead;
-            Node temp = evenHead;
-            while (temp.next != null) {
+        void segregateEvenOdd() {
+            Node current = head;
+            while (current != null) {
+                Node nextNode = current.next;
+                if (current.data % 2 == 0) {
+                    current.next = evenHead;
+                    evenHead = current;
+                } else {
+                    current.next = oddHead;
+                    oddHead = current;
+                }
+                current = nextNode;
+            }
+            if (evenHead != null) {
+                head = evenHead;
+                Node temp = evenHead;
+                while (temp.next != null) {
+                    temp = temp.next;
+                }
+                temp.next = oddHead;
+            } else {
+                head = oddHead;
+            }
+        }
+
+        void printList() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
                 temp = temp.next;
             }
-            temp.next = oddHead;
-        } else {
-            head = oddHead;
+            System.out.println();
         }
     }
 
-    // Function to print the linked list
-    void printList() {
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-
-    // Main method for testing
     public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
         LinkedList list = new LinkedList();
-        list.push(1);
-        list.push(2);
-        list.push(3);
-        list.push(4);
-        list.push(5);
-        list.push(6);
-
-        System.out.println("Original linked list:");
+        int n = s.nextInt();
+        for (int i = 0; i < n; i++) {
+            int data = s.nextInt();
+            list.push(data);
+        }
         list.printList();
 
         list.segregateEvenOdd();
-
-        System.out.println("Linked list after segregating even and odd nodes:");
         list.printList();
+
+        s.close();
     }
 }
